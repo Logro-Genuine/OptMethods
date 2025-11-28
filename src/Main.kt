@@ -79,7 +79,7 @@ fun main() {
     println("Expected result: point near (2.0, -1.0)")
     println()
 
-    Test 1: coord descend for 2D function f(x,y) = x^2 + y^2
+    //Test 1: coord descend for 2D function f(x,y) = x^2 + y^2
     println("Test 1: coord descend for f(x,y)=x^2 + y^2")
     val resultd1 = methods.coordDescent(
         func = { v -> v[0] * v[0] + v[1] * v[1] },
@@ -91,7 +91,7 @@ fun main() {
     println(resultd1)
     println("Expected result: point near (0.0, 0.0)\n")
 
-    Test 2: coord descend for 2D function f(x,y) = (x-2)^2 + (y+1)^2 + 3
+    //Test 2: coord descend for 2D function f(x,y) = (x-2)^2 + (y+1)^2 + 3
     println("Test 2: coord descend for f(x,y)=(x-2)^2 + (y+1)^2 + 3")
     val resultd2 = methods.coordDescent(
         func = { v -> (v[0] - 2) * (v[0] - 2) + (v[1] + 1) * (v[1] + 1) + 3 },
