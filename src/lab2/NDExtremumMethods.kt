@@ -166,7 +166,7 @@ class NDExtremumMethods {
         var fL = func(xL)
         var fR = func(xR)
 
-        var iter = n
+        val iter = n
         var functionCalls = 2   // первые два вызова
 
         while (n >= 1) {
@@ -238,22 +238,22 @@ class NDExtremumMethods {
             // цикл по всем координатам
             for (i in 0 until xCurr.size()) {
                 // создаем единичный вектор по текущей координате
-                var ei = DoubleVector(xCurr.size(), 0.0)
+                val ei = DoubleVector(xCurr.size(), 0.0)
                 ei.set(i, 1.0)
 
                 // вычисляем точки слева и справа от текущей
-                var xL = DoubleVector.sub(xCurr, ei.mul(lambda))
-                var xR = DoubleVector.add(xCurr, ei.mul(lambda))
+                val xL = DoubleVector.sub(xCurr, ei.mul(lambda))
+                val xR = DoubleVector.add(xCurr, ei.mul(lambda))
 
                 // вычисляем значения функции в этих точках
-                var fL = func(xL)
-                var fR = func(xR)
+                val fL = func(xL)
+                val fR = func(xR)
                 functionCalls += 2
 
                 // выбираем направление поиска минимума
                 if (fL > fR) {
                     // минимум находится справа, ищем на отрезке [xCurr, xR]
-                    var result = this.fibonacci(
+                    val result = this.fibonacci(
                         func = func,
                         lhs = xCurr,
                         rhs = xR,
@@ -263,7 +263,7 @@ class NDExtremumMethods {
                     functionCalls += result.functionCalls
                 } else {
                     // минимум находится слева, ищем на отрезке [xL, xCurr]
-                    var result = this.fibonacci(
+                    val result = this.fibonacci(
                         func = func,
                         lhs = xL,
                         rhs = xCurr,
